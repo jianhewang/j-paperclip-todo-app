@@ -1,0 +1,52 @@
+[
+    {
+        "id": "",
+        "category": "friends",
+        "title": "Friend Category",
+        "isComplete": true,
+        "startDate": "Wednesday September 3rd",
+        "startTime":"9:00am",
+        "endDate": "Wednesday September 3rd",
+        "endTime":"9:00am"
+    },
+    {
+        "id": "",
+        "category": "work",
+        "title": "Work Category",
+        "isComplete": true,
+        "startDate": "Wednesday September 3rd",
+        "startTime":"9:00am",
+        "endDate": "Wednesday September 3rd",
+        "endTime":"9:00am"
+    },
+    {
+        "id": "",
+        "category": "home",
+        "title": "Home Category",
+        "isComplete": true,
+        "startDate": "Wednesday September 3rd",
+        "startTime":"9:00am",
+        "endDate": "Wednesday September 3rd",
+        "endTime":"9:00am"
+    },
+    {
+        "id": "",
+        "category": "school",
+        "title": "School Category",
+        "isComplete": false,
+        "startDate": "Wednesday September 3rd",
+        "startTime":"9:00am",
+        "endDate": "Wednesday September 3rd",
+        "endTime":"9:00am"
+    },
+    {
+        "id": "",
+        "category": "expense",
+        "title": "Expense Category",
+        "isComplete": false,
+        "startDate": "Wednesday September 3rd",
+        "startTime":"9:00am",
+        "endDate": "Wednesday September 3rd",
+        "endTime":"9:00am"
+    }
+]

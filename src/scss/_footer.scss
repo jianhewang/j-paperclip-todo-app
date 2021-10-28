@@ -1,0 +1,36 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #453F42;
+    color: #DACECD;
+    text-align: end;
+    padding: 0.4rem;
+    max-width: 480px;
+
+    button{
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        background-color: #453F42;
+        color: #DACECD;
+        cursor: pointer;
+    }
+    button:hover,
+    button:active{
+        background-color: #DACECD;
+        color: #453F42;
+    }
+ }
+
+ @media only screen and (min-width: 481px) {
+    .footer {
+        position: fixed;
+        transform: translate(calc(50vw - 50%));
+        bottom: 0;
+        left: 0;
+    }
+  }
