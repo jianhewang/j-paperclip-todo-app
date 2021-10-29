@@ -2,3 +2,6 @@
   from = "/*"
   to = "/router"
   status = 404
+
+
+  
