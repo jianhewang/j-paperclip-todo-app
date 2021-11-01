@@ -14,7 +14,8 @@ import notFound from "../pages/notFound";
 
 const routes = {
     "/": home,
-    "/todos": toDoPage
+    "/todos": toDoPage,
+    "/error": notFound
 }
 
 const Router =  function (pathname)   {
