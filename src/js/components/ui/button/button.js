@@ -1,8 +1,8 @@
 import makeElement from "../../../utils/makeElement";
 
-const button = function (text){
+const button = function (text, id){
     const temp = `
-        <button>
+        <button id="${id}">
             ${text}
         </button>
     `;

@@ -3,10 +3,11 @@ import button from "../../components/ui/button/button";
 import { Router } from "../../routes/router";
 import { getStore } from "../../redux/store";
 import reducers from "../../redux/reducers";
+import brandingHeader from "../../components/ui/brandheader";
+import toDoItem from "../../components/cards/todoitem";
 
-const cancelButton = button("cancel")
-const deleteButton = button("delete")
-
+const cancelButton = button("cancel", "cancel")
+const deleteButton = button("delete", "delete")
 
 function deletePage (props){
     // Component Clean Up Function
@@ -24,24 +25,37 @@ function deletePage (props){
     }
     
     function onRemoveItem(e){
-        const index = getStore().findIndex((item) => {
-            return (item.id === props.id);
-        })
 
-        const action = {
-            type:"delete",
-            payload:{index},
-            cb:()=> Router('/todos')
+        if (props !== null){
+            Router('/todos');
+            const index = getStore().findIndex((item) => {
+                return (item.id === props.id);
+            })
+    
+            const action = {
+                type:"delete",
+                payload:{index},
+                cb:()=> Router('/todos')
+            }
+    
+            reducers(action);
+            cleanUp();
         }
-
-        reducers(action);
     }
-    console.log(props);
-
-    const page = document.querySelector('#app');
+console.log(props);
+    const page = document.createElement('aside');
+    page.classList.add('center-in-page');
+    page.append(brandingHeader());
+    
     cancelButton.addEventListener('click', onCancelDelete); 
     deleteButton.addEventListener('click', onRemoveItem);
-    page.append(cancelButton, deleteButton);
+
+    page.append(toDoItem(props, false));
+
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('button-layout');
+    page.append(buttonContainer);
+    buttonContainer.append(cancelButton, deleteButton);
     return page;
 }
 

@@ -4,7 +4,7 @@ import brandingHeader from "../components/ui/brandheader";
 import errorMessage from "../components/ui/notfoundpage/errorMessage";
 
 const notFound = function(){
-    const page = document.querySelector('#app');
+    const page = document.createElement('div');
 
     page.append(brandingHeader());
     page.append(errorMessage());

@@ -5,6 +5,8 @@ import home from "../pages/home";
 import toDoPage from "../pages/toDoPage";
 import notFound from "../pages/notFound";
 import deletePage from "../pages/delete";
+import addPage from "../pages/add";
+import editPage from "../pages/edit";
 
 /* 
      Route is a path to something .....file or function
@@ -16,6 +18,8 @@ import deletePage from "../pages/delete";
 const routes = {
     "/": home,
     "/todos": toDoPage,
+    "/add": addPage,
+    "/edit": editPage,
     "/delete": deletePage,
     "/*": notFound
 }

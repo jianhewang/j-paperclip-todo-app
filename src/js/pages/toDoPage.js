@@ -8,7 +8,7 @@ import { Router } from "../routes/router";
 
 const toDoPage = function(){
     
-    const page = document.querySelector('#app');
+    const page = document.createElement('div');
 
     page.append(brandingHeader());
 
@@ -23,7 +23,18 @@ const toDoPage = function(){
         
         // passing the unique id 
         const ItemId = {id:e.currentTarget.parentElement.parentElement.dataset.key}
-        Router('/delete', ItemId);
+        const selectedItem = todoList.find((item) => item.id === ItemId.id)
+        Router('/delete', selectedItem);
+    }
+
+    function onAddItem(e){
+        Router('/add');
+    }
+
+    function onEditItem(e){
+        const ItemId = {id:e.currentTarget.parentElement.parentElement.dataset.key}
+        const selectedItem = todoList.find((item) => item.id === ItemId.id)
+        Router('/edit', selectedItem);
     }
 
     // assume data is not null
@@ -32,12 +43,14 @@ const toDoPage = function(){
         const elem = todoList.map(item => toDoItem(item))
         elem.forEach(element => {
             element.querySelector('#delete').addEventListener('click', onDeleteItem);
+            element.querySelector('#edit').addEventListener('click', onEditItem);
             list.append(element);
         });
         page.append(appContainer);
     }
-    
+
     page.append(addToDo());
+    page.querySelector('#add').addEventListener('click', onAddItem)
     
     return page;
 }

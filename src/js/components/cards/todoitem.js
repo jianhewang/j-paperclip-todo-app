@@ -2,7 +2,7 @@ import makeElement from "../../utils/makeElement";
 import editButton from "../ui/button/editButton";
 import deleteButton from "../ui/button/deleteButton";
 
-const toDoItem = function ({id, category, title, isComplete}) {
+const toDoItem = function ({id, category, title, isComplete}, buttonOn=true) {
     const status = isComplete === true ? "Complete" : "Pending";
 
     let categorySvg;
@@ -63,8 +63,10 @@ const toDoItem = function ({id, category, title, isComplete}) {
       
     const item = makeElement(template);
     const buttonContainer = item.querySelector('.controls');
-    buttonContainer.append(editButton());
-    buttonContainer.append(deleteButton())
+    if (buttonOn){
+      buttonContainer.append(editButton());
+      buttonContainer.append(deleteButton());
+    }
 
     return item;
   };

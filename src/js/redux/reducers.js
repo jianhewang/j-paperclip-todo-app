@@ -14,19 +14,26 @@ import {getStore, updateStore} from './store'
 */
 
 
-function reducers ({action, payload, ...rest}){
+function reducers (action){
+    const store = getStore();       
+    
+    let newStore = null;
 
     switch(action.type){
         case "edit": return "edit employee";
-        case "delete":
-            const store = getStore();       
-            const index = action.payload.index;         
-            const newStore = [...store.slice(0, index), ...store.slice(index + 1)]
+        case "delete": 
+            const index = action.payload.index; 
+            newStore = [...store.slice(0, index), ...store.slice(index + 1)]
             updateStore(newStore)
             action.cb( ) 
-            return "remove employe with an id";
-        case "add": return "create a new employee";
-        default: return store
+            return "remove item";
+        case "add": 
+            const newItem = action.payload.newItem;
+            newStore = [newItem, ...store];
+            updateStore(newStore);
+            action.cb();
+            return "create a new item";
+        default: return store;
     }
 
 }
