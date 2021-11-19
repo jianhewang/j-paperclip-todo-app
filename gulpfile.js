@@ -1,9 +1,20 @@
 // node common js modules
 // browser ES modules
 // import src from gulp
-const {src, dest, series} = require('gulp')
+// const {src, dest, series} = require('gulp')
 
-// const static = function(cb) {
+// // const static = function(cb) {
+// //     //task
+// //     // src().pipe(`plugin`).pipe(`compress`).pipe(dest())
+// //     // any folder, any type - src/static/*.*/*.*
+// //     src('src/static/data/*.*')
+// //         .pipe(dest('dist/data'))
+
+// //     // call the callback
+// //     cb()
+// // }
+
+// const static = function() {
 //     //task
 //     // src().pipe(`plugin`).pipe(`compress`).pipe(dest())
 //     // any folder, any type - src/static/*.*/*.*
@@ -11,22 +22,26 @@ const {src, dest, series} = require('gulp')
 //         .pipe(dest('dist/data'))
 
 //     // call the callback
-//     cb()
+    
 // }
 
-const static = function() {
-    //task
-    // src().pipe(`plugin`).pipe(`compress`).pipe(dest())
-    // any folder, any type - src/static/*.*/*.*
-    src('src/static/data/*.*')
-        .pipe(dest('dist/data'))
+// function redirect(){
+//     return (src('./_redirects').pipe(dest('./dist')))
+// }
 
-    // call the callback
-    
+// exports.default = series(static, redirect)
+
+const {src, dest, series} = require('gulp')
+
+const static = function(){
+   return( src('src/static/**')
+    .pipe(dest('dist/static')))
+
 }
 
 function redirect(){
     return (src('./_redirects').pipe(dest('./dist')))
 }
 
+ 
 exports.default = series(static, redirect)
