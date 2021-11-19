@@ -14,4 +14,8 @@ const static = function(cb) {
     cb()
 }
 
+function redirect(){
+    return (src('./_redirects').pipe(dest('./dist')))
+}
+
 exports.default = static

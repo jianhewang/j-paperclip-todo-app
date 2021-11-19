@@ -15,10 +15,10 @@ import notFound from "../pages/notFound";
 const routes = {
     "/": home,
     "/todos": toDoPage,
-    "/error": notFound
+    "/*": notFound
 }
 
-const Router =  function (pathname)   {
+const Router =  function (pathname, params = null)   {
    
      // check the pathname agains the router object
      // if path is valid display the component page
@@ -35,7 +35,7 @@ const Router =  function (pathname)   {
         window.location.origin + pathname
     )
     
-    if (isValidateRoute === undefined){
+    if (isValidateRoute === undefined || isValidateRoute === ''){
         app.appendChild(notFound())
     }
     else{
@@ -43,8 +43,5 @@ const Router =  function (pathname)   {
         app.appendChild(routes[window.location.pathname]())
     }   
 }
-
-
-
  
 export { Router}
