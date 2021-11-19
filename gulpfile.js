@@ -34,8 +34,8 @@
 const {src, dest, series} = require('gulp')
 
 const static = function(){
-   return( src('src/static/**')
-    .pipe(dest('dist/static')))
+   return( src('src/static/data/*.*')
+    .pipe(dest('dist/data')))
 
 }
 
