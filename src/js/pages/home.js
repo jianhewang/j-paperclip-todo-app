@@ -13,7 +13,7 @@ const home = function(){
     page.append(header('J\'s Paperclip'));
     page.append(tagline('Listen better. Plan better. Build better.'))
     page.append(link("To Do App", "/todos"))
-    page.append(link("Not Found Page", "/error" ))
+    //page.append(link("Not Found Page", "/error" ))
     
     return page
 }

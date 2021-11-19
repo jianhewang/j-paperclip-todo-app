@@ -11,8 +11,13 @@ function createStore (data=[]){
 function getStore (){
     return store
 }
+
+function updateStore(newStore){
  
-export {createStore, getStore}
+    store = [...newStore]
+}
+ 
+export {createStore, getStore, updateStore}
 
 
  

@@ -1,4 +1,4 @@
-import {getStore} from './store'
+import {getStore, updateStore} from './store'
 /* 
        Reducer works on the store
        action: what do you want to do on the store
@@ -18,7 +18,13 @@ function reducers ({action, payload, ...rest}){
 
     switch(action.type){
         case "edit": return "edit employee";
-        case "delete": return "remove employe with an id";
+        case "delete":
+            const store = getStore();       
+            const index = action.payload.index;         
+            const newStore = [...store.slice(0, index), ...store.slice(index + 1)]
+            updateStore(newStore)
+            action.cb( ) 
+            return "remove employe with an id";
         case "add": return "create a new employee";
         default: return store
     }

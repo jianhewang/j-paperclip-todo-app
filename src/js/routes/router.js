@@ -4,6 +4,7 @@
 import home from "../pages/home";
 import toDoPage from "../pages/toDoPage";
 import notFound from "../pages/notFound";
+import deletePage from "../pages/delete";
 
 /* 
      Route is a path to something .....file or function
@@ -15,6 +16,7 @@ import notFound from "../pages/notFound";
 const routes = {
     "/": home,
     "/todos": toDoPage,
+    "/delete": deletePage,
     "/*": notFound
 }
 
@@ -40,7 +42,8 @@ const Router =  function (pathname, params = null)   {
     }
     else{
         // we need to add the () in the end of routes to call the page
-        app.appendChild(routes[window.location.pathname]())
+        //app.appendChild(routes[window.location.pathname](params))
+        app.appendChild(routes[isValidateRoute](params) )
     }   
 }
  
