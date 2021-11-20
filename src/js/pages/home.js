@@ -4,6 +4,7 @@ import header from "../components/ui/header";
 import link from "../components/ui/link";
 import tagline from "../components/ui/tagline";
 
+
 const home = function(){
 
     const page = document.createElement('header');
@@ -12,8 +13,8 @@ const home = function(){
 
     page.append(header('J\'s Paperclip'));
     page.append(tagline('Listen better. Plan better. Build better.'))
-    page.append(link("To Do App", "/todos"))
-    //page.append(link("Not Found Page", "/error" ))
+    page.append(link("<img src=\"https://img.icons8.com/plasticine/100/000000/circled-play.png\"/>To Do App", "/todos"))
+
     
     return page
 }

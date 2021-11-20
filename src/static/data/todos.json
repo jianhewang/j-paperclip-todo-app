@@ -1,8 +1,8 @@
 [
     {
         "id": "",
-        "category": "friends",
-        "title": "Friend Category",
+        "category": "social",
+        "title": "Social Category",
         "isComplete": true,
         "startDate": "Wednesday September 3rd",
         "startTime":"9:00am",

@@ -8,7 +8,7 @@ const notFound = function(){
 
     page.append(brandingHeader());
     page.append(errorMessage());
-    page.querySelector('div.page-not-found').append(link("Return to Home Page", "/"));
+    page.querySelector('div.page-not-found').append(link("<img src=\"https://img.icons8.com/plasticine/100/000000/arrow-pointing-left.png\"/>Return to Home Page", "/"));
 
     return page
 }

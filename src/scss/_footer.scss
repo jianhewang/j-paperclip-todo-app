@@ -16,13 +16,14 @@
         text-decoration: none;
         display: inline-block;
         background-color: #453F42;
-        color: #DACECD;
         cursor: pointer;
+        filter: grayscale(60%);
+        transition: filter 0.4s ease-in-out;
     }
     button:hover,
     button:active{
-        background-color: #DACECD;
-        color: #453F42;
+        
+        filter: grayscale(0);
     }
  }
 

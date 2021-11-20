@@ -1,28 +1,18 @@
-import {getStore, updateStore} from './store'
-/* 
-       Reducer works on the store
-       action: what do you want to do on the store
-            action.type = "edit"
-              action.type = "delete"
-                action.type = "create"
-           delete: remove a employee
-           edit: edits an existing employee
-           add: add a new employee
-       payload data for that action object
-          {object}
-
-*/
-
+import {getStore, updateStore} from './store';
 
 function reducers (action){
     const store = getStore();       
-    
+    const index = action.payload.index; 
     let newStore = null;
 
     switch(action.type){
-        case "edit": return "edit employee";
+        case "edit": 
+            const editItem = action.payload.editItem;
+            newStore = [...store.slice(0, index), Object.assign({}, store[index], editItem) , ...store.slice(index + 1)];
+            updateStore(newStore);
+            action.cb();
+            return "edit item";
         case "delete": 
-            const index = action.payload.index; 
             newStore = [...store.slice(0, index), ...store.slice(index + 1)]
             updateStore(newStore)
             action.cb( ) 

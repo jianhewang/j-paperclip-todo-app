@@ -68,10 +68,20 @@ aside {
                     width: 1rem;
                     height: auto;
                 }
+                span{
+                    display: none;
+                }
             }
             button:hover{
                 background-color: #76533F;
                 color:#DACECD;
+                transition: 0.5s;
+                img{
+                    display: none;
+                }
+                span{
+                    display: inline;
+                }
             }
         }
     }
