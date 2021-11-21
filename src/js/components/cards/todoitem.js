@@ -4,42 +4,47 @@ import deleteButton from "../ui/button/deleteButton";
 import editItem from "../../pages/edit";
 import switchButton from "../ui/button/switchButton";
 import menuButton from "../ui/button/menuButton";
+import logo from "../icons/logo";
 
 const toDoItem = function ({id, category, title, isComplete, startDate, startTime, endDate, endTime} = {id:'', category:'', title:'', isComplete:'', startDate:'', startTime:'', endDate:'', endTime:''}, buttonOn=true) {
-    const status = isComplete === true ? "Complete" : "Pending";
+    const status = isComplete? "Complete" : "Pending";
+    
 
     let categoryImg;
     switch(category){
         case "social":
             categoryImg = `
-            <img src="https://img.icons8.com/plasticine/100/000000/crowd.png"/>
+            
+            <img src="https://img.icons8.com/bubbles/100/000000/crowd--v1.png"/>
             `;
-            // bubble
+            // <img src="https://img.icons8.com/plasticine/100/000000/crowd.png"/>
             break;
         case "work":
             categoryImg = `
-            <img src="https://img.icons8.com/plasticine/100/000000/office.png"/>
+            <img src="https://img.icons8.com/bubbles/100/000000/office.png"/>
             `;
-            // sticker
+            // <img src="https://img.icons8.com/plasticine/100/000000/office.png"/>
             break;
         case "home":
             categoryImg = `
-            <img src="https://img.icons8.com/plasticine/100/000000/home.png"/>
+            <img src="https://img.icons8.com/bubbles/100/000000/cottage.png"/>
+            
             `;
-            // doodle
+            // <img src="https://img.icons8.com/plasticine/100/000000/home.png"/>
             break;
         case "school":
             categoryImg = `
-            <img src="https://img.icons8.com/plasticine/100/000000/book-and-pencil.png"/>
+            <img src="https://img.icons8.com/bubbles/100/000000/book-and-pencil.png"/>
+            
             `;
-            // cloud
+            // <img src="https://img.icons8.com/plasticine/100/000000/book-and-pencil.png"/>
             break;
         case "expense":
             categoryImg =  `
+            <img src="https://img.icons8.com/bubbles/100/000000/wallet.png"/>
             
-            <img src="https://img.icons8.com/plasticine/100/000000/cost.png"/>
             `
-            //hand drawn
+            //<img src="https://img.icons8.com/plasticine/100/000000/cost.png"/>
             break;
     }
 
@@ -67,20 +72,27 @@ const toDoItem = function ({id, category, title, isComplete, startDate, startTim
     const item = makeElement(template);
     const buttonContainer = item.querySelector('.buttons');
     if (buttonOn){
-        //buttonContainer.append(menuButton())
-      buttonContainer.append(editButton());
-      buttonContainer.append(deleteButton());
-      buttonContainer.append(switchButton());
+        buttonContainer.append(switchButton(id));
+        buttonContainer.append(deleteButton(id));
+        buttonContainer.append(editButton(id));
+        settings();
+    }
+    else{
+        buttonContainer.parentElement.querySelector('img').style.visibility = "hidden";
     }
     
-    const setting = item.querySelector('.controls img');
-    setting.addEventListener('click', function(e){
-        e.target.parentElement.querySelector('.buttons').style.display = 'inline-block';
-    })
-
-    buttonContainer.querySelector('img').addEventListener('click', function(e){
-        e.target.parentElement.style.display = 'none';
-    })
+    function settings(){   
+        const setting = item.querySelector('.controls img');
+        setting.addEventListener('click', function(e){
+            //e.target.parentElement.querySelector('.buttons').style.display = 'flex';
+            e.target.parentElement.querySelector('.buttons').classList.add('settings');
+        })
+    
+        buttonContainer.querySelector('img').addEventListener('click', function(e){
+            //e.target.parentElement.style.display = 'none';
+            e.target.parentElement.classList.remove('settings');
+        })
+    }
 
     return item;
   };

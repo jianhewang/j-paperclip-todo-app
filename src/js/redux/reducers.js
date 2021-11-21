@@ -23,6 +23,12 @@ function reducers (action){
             updateStore(newStore);
             action.cb();
             return "create a new item";
+        case "status":
+            const status = store[index];
+            newStore = [...store.slice(0, index), Object.assign({}, store[index], {isComplete: !status.isComplete}) , ...store.slice(index +1)];
+            updateStore(newStore);
+            action.cb();
+            return "status changed";
         default: return store;
     }
 

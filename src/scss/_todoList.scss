@@ -35,6 +35,7 @@ aside {
         border: 2px solid #76533F;
         border-radius: 5px;
         padding: 12px;
+        padding-right: 0;
         position: relative;
 
         p:first-child{
@@ -78,16 +79,30 @@ aside {
             //     transition: .5s ease;
             // }
             .buttons{
-                display: none;
+                display: flex;
                 justify-content: space-between;
+                align-items: flex-start;
+                flex-direction: row-reverse;
                 position: absolute;
                 left: 0;
                 right: 0;
                 top:0;
                 bottom: 0;
                 background-color: #fff;
+                border-radius: 10px;
                 z-index: 1;
+                padding: 12px;
+                padding-right: 4px;
+                transition: all .3s ease-in-out;
+                visibility: hidden;
+                opacity: 0;
             }
+
+            .settings{
+                visibility: visible;
+                opacity: 1;
+            }
+
             button{
                 //display: none;
                 color: #76533F;

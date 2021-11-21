@@ -47,6 +47,11 @@ console.log(props);
     page.classList.add('center-in-page');
     page.append(brandingHeader());
     
+    const header = `
+    <h2 class="crud-header">Delete Item</h2>
+    `;
+    page.append(makeElement(header));
+
     cancelButton.addEventListener('click', onCancelDelete); 
     deleteButton.addEventListener('click', onRemoveItem);
 
