@@ -47,8 +47,8 @@ const toDoItem = function ({id, category, title, isComplete, startDate, startTim
             <p>${categoryImg}</p>
             <div>
                 <p> ${title} </p>
-                <p>Start: ${startDate} <span class="time">${startTime}</span></p>
-                <p><span>End: </span>${endDate} <span class="time">${endTime}</span></p>
+                <p>Start: <span class="date">${startDate}</span> <span class="time">${startTime}</span></p>
+                <p><span>End: </span><span class="date">${endDate}</span> <span class="time">${endTime}</span></p>
                 <p class="${statusClass}">${status}</p>
             </div>
             <div class="controls">

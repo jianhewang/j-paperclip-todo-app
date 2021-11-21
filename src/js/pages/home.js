@@ -11,7 +11,7 @@ const home = function(){
     page.classList.add('home-header');
     page.classList.add('center-in-page');
 
-    page.append(header('J\'s Paperclip'));
+    page.append(header('Paperclip'));
     page.append(tagline('Listen better. Plan better. Build better.', 'animate__animated animate__fadeInUp'))
     page.append(link("<img src=\"https://img.icons8.com/plasticine/100/000000/circled-play.png\"/>", "/todos", "btn btn--stripe"))
     

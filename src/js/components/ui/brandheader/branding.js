@@ -5,7 +5,7 @@ const brandingHeader = function(){
     const brandHeaderContainer = document.createElement('div');
     brandHeaderContainer.classList.add('brand-head');
 
-    brandHeaderContainer.append(header('J\'s Paperclip', 'branding-header'));
+    brandHeaderContainer.append(header('Paperclip', 'branding-header'));
     brandHeaderContainer.append(tagline('Listen better. Plan better. Build better.'));
 
     return brandHeaderContainer
