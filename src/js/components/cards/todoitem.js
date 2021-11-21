@@ -1,14 +1,12 @@
 import makeElement from "../../utils/makeElement";
 import editButton from "../ui/button/editButton";
 import deleteButton from "../ui/button/deleteButton";
-import editItem from "../../pages/edit";
 import switchButton from "../ui/button/switchButton";
-import menuButton from "../ui/button/menuButton";
-import logo from "../icons/logo";
+
 
 const toDoItem = function ({id, category, title, isComplete, startDate, startTime, endDate, endTime} = {id:'', category:'', title:'', isComplete:'', startDate:'', startTime:'', endDate:'', endTime:''}, buttonOn=true) {
-    const status = isComplete? "Complete" : "Pending";
-    
+    const status = isComplete? "completed" : "in progress";
+    const statusClass = isComplete? "done" : "";
 
     let categoryImg;
     switch(category){
@@ -17,34 +15,29 @@ const toDoItem = function ({id, category, title, isComplete, startDate, startTim
             
             <img src="https://img.icons8.com/bubbles/100/000000/crowd--v1.png"/>
             `;
-            // <img src="https://img.icons8.com/plasticine/100/000000/crowd.png"/>
             break;
         case "work":
             categoryImg = `
             <img src="https://img.icons8.com/bubbles/100/000000/office.png"/>
             `;
-            // <img src="https://img.icons8.com/plasticine/100/000000/office.png"/>
             break;
         case "home":
             categoryImg = `
             <img src="https://img.icons8.com/bubbles/100/000000/cottage.png"/>
             
             `;
-            // <img src="https://img.icons8.com/plasticine/100/000000/home.png"/>
             break;
         case "school":
             categoryImg = `
             <img src="https://img.icons8.com/bubbles/100/000000/book-and-pencil.png"/>
             
             `;
-            // <img src="https://img.icons8.com/plasticine/100/000000/book-and-pencil.png"/>
             break;
         case "expense":
             categoryImg =  `
             <img src="https://img.icons8.com/bubbles/100/000000/wallet.png"/>
             
             `
-            //<img src="https://img.icons8.com/plasticine/100/000000/cost.png"/>
             break;
     }
 
@@ -54,9 +47,9 @@ const toDoItem = function ({id, category, title, isComplete, startDate, startTim
             <p>${categoryImg}</p>
             <div>
                 <p> ${title} </p>
-                <p>Start: ${startDate} ${startTime}</p>
-                <p><span>End: </span>${endDate} ${endTime}</p>
-                <p>${status}</p>
+                <p>Start: ${startDate} <span class="time">${startTime}</span></p>
+                <p><span>End: </span>${endDate} <span class="time">${endTime}</span></p>
+                <p class="${statusClass}">${status}</p>
             </div>
             <div class="controls">
                 
@@ -84,14 +77,16 @@ const toDoItem = function ({id, category, title, isComplete, startDate, startTim
     function settings(){   
         const setting = item.querySelector('.controls img');
         setting.addEventListener('click', function(e){
-            //e.target.parentElement.querySelector('.buttons').style.display = 'flex';
             e.target.parentElement.querySelector('.buttons').classList.add('settings');
         })
     
         buttonContainer.querySelector('img').addEventListener('click', function(e){
-            //e.target.parentElement.style.display = 'none';
             e.target.parentElement.classList.remove('settings');
         })
+    }
+
+    function dateFormat(date){
+        
     }
 
     return item;

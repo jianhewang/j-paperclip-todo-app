@@ -7,7 +7,7 @@
     label{
         margin: 0;
         color:#453F42;
-        font-weight: 500;
+        font-weight: 600;
     }
     input, select{
         border: none;
@@ -39,11 +39,11 @@
     }
     button{
         border: none;
-        padding: 10px 16px;
+        padding: 10px;
         font-size: 16px;
         display: inline-block;
         text-align: center;
-        width: 84px;
+        width: 90px;
         cursor: pointer;
         font-weight: 500;
         border-radius: 12px;
@@ -112,7 +112,7 @@ div.controls{
     p{
         margin-bottom: 1rem;
         color:#453F42;
-        font-weight: 500;
+        font-weight: 600;
     }
     label{
         margin-left: 1rem;
@@ -159,11 +159,11 @@ div.controls{
       }
 
       input:checked + span {
-        background-color: #78a2d2;
+        background-color: #a1d3a2;
       }
       
       input:focus + span {
-        box-shadow: 0 0 1px #78a2d2;
+        box-shadow: 0 0 1px #a1d3a2;
       }
       
       input:checked + span:before {

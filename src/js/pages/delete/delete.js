@@ -7,7 +7,7 @@ import brandingHeader from "../../components/ui/brandheader";
 import toDoItem from "../../components/cards/todoitem";
 
 const cancelButton = button("Cancel", "cancel")
-const deleteButton = button("Delete", "delete")
+const deleteButton = button("Delete", "delete", "delete")
 
 function deletePage (props){
     // Component Clean Up Function

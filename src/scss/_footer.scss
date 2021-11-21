@@ -10,20 +10,37 @@
     max-width: 480px;
 
     button{
+        color: #f69272;
         border: none;
-        border-radius: 5px;
+        border-radius: 50%;
         text-align: center;
         text-decoration: none;
         display: inline-block;
         background-color: #fff;
         cursor: pointer;
-        filter: grayscale(60%);
-        transition: all .5s ease-in-out;
+        width: 100px;
+        height: 100px;
+        transition: all .6s ease-in-out;
+        svg{
+            width: 80px;
+            height: auto;
+        }
+        span{
+            display: none;
+            font-weight: 600;
+        }
     }
     button:hover,
     button:active{
-        transform: translateY(-6px);
-        filter: grayscale(0);
+        background-color: #f69272;
+        color: #fff;
+        border: 16px solid #fff;
+        svg{
+            display: none;
+        }
+        span{
+            display: inline;
+        }
     }
     button:focus{
         outline: none;

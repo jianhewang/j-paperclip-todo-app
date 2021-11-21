@@ -14,20 +14,20 @@ function form ({id, category, title, isComplete, startDate, startTime, endDate, 
     }
 
     const template = `
-    <form method="post" class=${styles.form} id="form">
+    <form class=${styles.form} id="form">
         <input type="hidden" name="id" value="${id}"/>
 
         <div>
             <div class="${styles.title}"">
             <label>Description</label>
-            <input type="text" name="description" value="${title}" id="description">
+            <input type="text" name="description" value="${title}" id="description" required>
             </div>
         </div>
 
         <div>
             <div class="${styles.category}">
                 <label for="category">Category</label>
-                <select name="category" id="category">
+                <select name="category" id="category" required>
                     <option value="">Select Category</option>
                     <option value="expense">Expense</option>
                     <option value="home">Home</option>
@@ -50,30 +50,30 @@ function form ({id, category, title, isComplete, startDate, startTime, endDate, 
         <div class="${styles.datetime}">
             <div>
                 <label for="startdate">Start Date</label>
-                <input type="date" name="startdate" id="startDate" value="${startDate}">
+                <input type="date" name="startdate" id="startDate" value="${startDate}" required>
             </div>
             
             <div>
                 <label for="starttime">Start Time</label>
-                <input type="time" name="starttime" id="startTime" value="${startTime}">
+                <input type="time" name="starttime" id="startTime" value="${startTime}" required>
             </div>
         </div>
 
         <div class="${styles.datetime}"> 
             <div>
                 <label for="enddate">End Date</label>
-                <input type="date" name="enddate" id="endDate" value="${endDate}">
+                <input type="date" name="enddate" id="endDate" value="${endDate}" required>
             </div>
         
             <div>
                 <label for="endtime">End Time</label>
-                <input type="time" name="endtime" id="endTime" value="${endTime}">
+                <input type="time" name="endtime" id="endTime" value="${endTime}" required>
             </div>
         </div>
 
         <div class="${styles.controls}">
             <button id="cancel">Cancel</button>
-            <button type="submit" id="save">Save</button>
+            <button type="submit" id="save">Submit</button>
         </div>
 
     </form>
@@ -88,9 +88,3 @@ function form ({id, category, title, isComplete, startDate, startTime, endDate, 
 }
 
 export default form
-
-
-{/* <div class="${styles.status}">
-                <label for="status">Completed</label>
-                <input type="checkbox" name="status" id="status">
-            </div> */}

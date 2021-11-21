@@ -10,7 +10,7 @@ function editPage(props){
 
     function cleanUp(){
         page.querySelector('#cancel').removeEventListener('click', onCancelEdit);
-        page.querySelector('#save').removeEventListener('submit', onEditItem);
+        page.querySelector('#form').removeEventListener('submit', onEditItem);
     }
 
     function onCancelEdit(e){
@@ -39,10 +39,6 @@ function editPage(props){
             const index = getStore().findIndex((item) => {
                 return (item.id === editItem.id);
             })
-
-            console.log(editItem);
-            console.log(index);
-
             const action = {
                 type: "edit",
                 payload: { index, editItem },
@@ -63,7 +59,7 @@ function editPage(props){
     page.append(form(props))
 
     page.querySelector('#cancel').addEventListener('click', onCancelEdit);
-    page.querySelector('#save').addEventListener('click', onEditItem);
+    page.querySelector('#form').addEventListener('submit', onEditItem);
 
     return page;
 }

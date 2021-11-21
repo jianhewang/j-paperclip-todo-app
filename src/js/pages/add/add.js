@@ -9,7 +9,13 @@ import makeElement from "../../utils/makeElement";
 
 function addPage(){
 
+    function cleanUp(){
+        page.querySelector('#cancel').removeEventListener('click', onCancelAdd);
+        page.querySelector('#form').removeEventListener('submit', onAddNewItem);
+    }
+
     function onCancelAdd(e){
+        cleanUp();
         Router('/todos');
     }
 
@@ -30,14 +36,13 @@ function addPage(){
             endTime: addForm.elements['endtime'].value
         }
 
-        console.log(newItem);
         const action = {
             type: "add",
             payload: {newItem},
             cb: () => Router('/todos')
         }
         reducers(action);
-
+        cleanUp();
     }
 
     const page = document.createElement('div');
@@ -49,7 +54,7 @@ function addPage(){
     page.append(form())
 
     page.querySelector('#cancel').addEventListener('click', onCancelAdd);
-    page.querySelector('#save').addEventListener('click', onAddNewItem);
+    page.querySelector('#form').addEventListener('submit', onAddNewItem);
 
     return page
 }
