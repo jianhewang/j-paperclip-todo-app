@@ -16,6 +16,8 @@ text-align: center;
      color:#453F42;
      font-size: 3rem;
      line-height: 3rem;
+     display: flex;
+     align-items: center;
  }
 
  p{
@@ -41,6 +43,13 @@ text-align: center;
   border: 1px solid #76533F;
   background-color: #76533F;
  }
+}
+
+.crud-header {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .page-not-found{

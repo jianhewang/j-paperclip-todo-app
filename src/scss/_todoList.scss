@@ -6,6 +6,9 @@
         color:#453F42;
         font-size: 3rem;
         line-height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     p{
         color:#76533F; 
@@ -22,7 +25,7 @@ aside {
     margin: 0 auto;
     max-width: 480px;
     padding: 0 24px;
-    margin-bottom: 5rem;
+    //margin-bottom: 5rem;
 
     .todoItem {
         display: flex;
@@ -55,6 +58,7 @@ aside {
         p.controls {
             display: flex;
             flex-direction: column;
+
             button{
                 color: #76533F;
                 border-radius: 6px;
@@ -72,6 +76,7 @@ aside {
                     display: none;
                 }
             }
+            
             button:hover{
                 background-color: #76533F;
                 color:#DACECD;

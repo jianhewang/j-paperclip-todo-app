@@ -3,40 +3,79 @@ import * as styles from './styles.module.scss';
 
 function form ({id, category, title, isComplete, startDate, startTime, endDate, endTime} = {id:'', category:'', title:'', isComplete:'', startDate:'', startTime:'', endDate:'', endTime:''}){
 
+    let actionButton, actionButtonId;
+    if (id === ''){
+        actionButton = 'Add';
+        actionButtonId = 'add';
+    }
+    else{
+        actionButton = 'Edit';
+        actionButtonId = 'edit';
+    }
+
     const template = `
     <form method="post" class=${styles.form} id="form">
-        <input type="text" name="id" value="${id}"/>
+        <input type="hidden" name="id" value="${id}"/>
 
-        <label>Description</label>
-        <input type="text" name="description" value="${title}" id="description">
+        <div>
+            <div class="${styles.title}"">
+            <label>Description</label>
+            <input type="text" name="description" value="${title}" id="description">
+            </div>
+        </div>
 
-        <label for="category">Category</label>
-        <select name="category" id="category">
-            <option value="">Select Category</option>
-            <option value="work">Work</option>
-            <option value="school">School</option>
-            <option value="friends">Friends</option>
-            <option value="home">Home</option>
-            <option value="expense">Expense</option>
-        </select>
+        <div>
+            <div class="${styles.category}">
+                <label for="category">Category</label>
+                <select name="category" id="category">
+                    <option value="">Select Category</option>
+                    <option value="work">Work</option>
+                    <option value="school">School</option>
+                    <option value="social">Social</option>
+                    <option value="home">Home</option>
+                    <option value="expense">Expense</option>
+                </select>
+            </div>
+            
+            <div class="${styles.status}">
+                <p>Completed</p>
+                <label for="status" class="${styles.switch}">
+                    <input type="checkbox" name="status" id="status"/>
+                    <span></span>
+                </label>
+            </div>
 
-        <label for="status">Complete</label>
-        <input type="checkbox" name="status" id="status">
+        </div>
 
-        <label for="startdate">Start Date</label>
-        <input type="date" name="startdate" id="startDate" value="${startDate}">
+        <div class="${styles.datetime}">
+            <div>
+                <label for="startdate">Start Date</label>
+                <input type="date" name="startdate" id="startDate" value="${startDate}">
+            </div>
+            
+            <div>
+                <label for="starttime">Start Time</label>
+                <input type="time" name="starttime" id="startTime" value="${startTime}">
+            </div>
+        </div>
 
-        <label for="enddate">End Date</label>
-        <input type="date" name="enddate" id="endDate" value="${endDate}">
+        <div class="${styles.datetime}"> 
+            <div>
+                <label for="enddate">End Date</label>
+                <input type="date" name="enddate" id="endDate" value="${endDate}">
+            </div>
+        
+            <div>
+                <label for="endtime">End Time</label>
+                <input type="time" name="endtime" id="endTime" value="${endTime}">
+            </div>
+        </div>
 
-        <label for="starttime">Start Time</label>
-        <input type="time" name="starttime" id="startTime" value="${startTime}">
+        <div class="${styles.controls}">
+            <button id="cancel">Cancel</button>
+            <button type="submit" id="save">Save</button>
+        </div>
 
-        <label for="endtime">End Time</label>
-        <input type="time" name="endtime" id="endTime" value="${endTime}">
-
-        <button id="cancel">Cancel</button>
-        <button type="submit" id="save">Save</button>
     </form>
     `;
     const elem = makeElement(template);
@@ -49,3 +88,9 @@ function form ({id, category, title, isComplete, startDate, startTime, endDate, 
 }
 
 export default form
+
+
+{/* <div class="${styles.status}">
+                <label for="status">Completed</label>
+                <input type="checkbox" name="status" id="status">
+            </div> */}

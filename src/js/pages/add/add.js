@@ -3,6 +3,8 @@ import form from "../../components/ui/form/form";
 import { Router } from "../../routes/router";
 import { v4 as uuidv4} from 'uuid';
 import reducers from "../../redux/reducers";
+import brandingHeader from "../../components/ui/brandheader";
+import makeElement from "../../utils/makeElement";
 
 
 function addPage(){
@@ -39,9 +41,11 @@ function addPage(){
     }
 
     const page = document.createElement('div');
-
-    
-
+    const header = `
+    <h2 class="crud-header">Add New Item</h2>
+    `;
+    page.append(brandingHeader());
+    page.append(makeElement(header));
     page.append(form())
 
     page.querySelector('#cancel').addEventListener('click', onCancelAdd);

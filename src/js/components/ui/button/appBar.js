@@ -3,7 +3,7 @@ import makeElement from "../../../utils/makeElement";
 const addButton = function (){
     const button = `
         <button id="add">
-        <img src="https://img.icons8.com/plasticine/100/000000/add--v1.png"/>
+        <img src="https://img.icons8.com/plasticine/100/000000/plus.png"/>
         </button>
     `;
 
