@@ -6,8 +6,8 @@ import reducers from "../../redux/reducers";
 import brandingHeader from "../../components/ui/brandheader";
 import toDoItem from "../../components/cards/todoitem";
 
-const cancelButton = button("cancel", "cancel")
-const deleteButton = button("delete", "delete")
+const cancelButton = button("Cancel", "cancel")
+const deleteButton = button("Delete", "delete")
 
 function deletePage (props){
     // Component Clean Up Function

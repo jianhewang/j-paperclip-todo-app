@@ -1,6 +1,9 @@
 import makeElement from "../../utils/makeElement";
 import editButton from "../ui/button/editButton";
 import deleteButton from "../ui/button/deleteButton";
+import editItem from "../../pages/edit";
+import switchButton from "../ui/button/switchButton";
+import menuButton from "../ui/button/menuButton";
 
 const toDoItem = function ({id, category, title, isComplete, startDate, startTime, endDate, endTime} = {id:'', category:'', title:'', isComplete:'', startDate:'', startTime:'', endDate:'', endTime:''}, buttonOn=true) {
     const status = isComplete === true ? "Complete" : "Pending";
@@ -46,19 +49,38 @@ const toDoItem = function ({id, category, title, isComplete, startDate, startTim
             <p>${categoryImg}</p>
             <div>
                 <p> ${title} </p>
-                <p>Due: ${endDate}</p>
+                <p>Start: ${startDate} ${startTime}</p>
+                <p><span>End: </span>${endDate} ${endTime}</p>
                 <p>${status}</p>
             </div>
-            <p class="controls"></p>
+            <div class="controls">
+                
+                <img src="https://img.icons8.com/plasticine/40/000000/menu-2.png"/>
+                
+                <div class="buttons">
+                <img src="https://img.icons8.com/plasticine/40/000000/delete-sign.png"/>
+                </div>
+            </div>
         </li>
       `;
       
     const item = makeElement(template);
-    const buttonContainer = item.querySelector('.controls');
+    const buttonContainer = item.querySelector('.buttons');
     if (buttonOn){
+        //buttonContainer.append(menuButton())
       buttonContainer.append(editButton());
       buttonContainer.append(deleteButton());
+      buttonContainer.append(switchButton());
     }
+    
+    const setting = item.querySelector('.controls img');
+    setting.addEventListener('click', function(e){
+        e.target.parentElement.querySelector('.buttons').style.display = 'inline-block';
+    })
+
+    buttonContainer.querySelector('img').addEventListener('click', function(e){
+        e.target.parentElement.style.display = 'none';
+    })
 
     return item;
   };

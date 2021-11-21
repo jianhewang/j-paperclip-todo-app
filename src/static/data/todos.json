@@ -4,49 +4,49 @@
         "category": "social",
         "title": "Social Category",
         "isComplete": true,
-        "startDate": "Wednesday September 3rd",
-        "startTime":"9:00am",
-        "endDate": "Wednesday September 3rd",
-        "endTime":"9:00am"
+        "startDate": "2021-11-12",
+        "startTime":"09:00",
+        "endDate": "2021-11-12",
+        "endTime":"10:00"
     },
     {
         "id": "",
         "category": "work",
         "title": "Work Category",
         "isComplete": true,
-        "startDate": "Wednesday September 3rd",
-        "startTime":"9:00am",
-        "endDate": "Wednesday September 3rd",
-        "endTime":"9:00am"
+        "startDate": "2021-11-08",
+        "startTime":"13:00",
+        "endDate": "2021-11-08",
+        "endTime":"14:50"
     },
     {
         "id": "",
         "category": "home",
         "title": "Home Category",
         "isComplete": true,
-        "startDate": "Wednesday September 3rd",
-        "startTime":"9:00am",
-        "endDate": "Wednesday September 3rd",
-        "endTime":"9:00am"
+        "startDate": "2021-11-09",
+        "startTime":"18:00",
+        "endDate": "2021-11-09",
+        "endTime":"20:00"
     },
     {
         "id": "",
         "category": "school",
         "title": "School Category",
         "isComplete": false,
-        "startDate": "Wednesday September 3rd",
-        "startTime":"9:00am",
-        "endDate": "Wednesday September 3rd",
-        "endTime":"9:00am"
+        "startDate": "2021-11-10",
+        "startTime":"19:00",
+        "endDate": "2021-11-10",
+        "endTime":"21:00"
     },
     {
         "id": "",
         "category": "expense",
         "title": "Expense Category",
         "isComplete": false,
-        "startDate": "Wednesday September 3rd",
-        "startTime":"9:00am",
-        "endDate": "Wednesday September 3rd",
-        "endTime":"9:00am"
+        "startDate": "2021-11-21",
+        "startTime":"15:00",
+        "endDate": "2021-11-21",
+        "endTime":"16:00"
     }
 ]

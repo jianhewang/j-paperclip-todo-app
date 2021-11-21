@@ -28,20 +28,26 @@ text-align: center;
   
  }
  a{
-     color:#76533F;
+     //color:#76533F;
      text-decoration: none;
-     box-shadow: 0 0 1px 1px #76533F;
+     //box-shadow: 0 0 1px 1px #76533F;
      padding: 0.5rem 1rem;
-     border: 1px solid #DACECD;
+     //border: 1px solid #DACECD;
      border-radius: 4px;
      cursor: pointer;
      margin: 0.5rem;
+     box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+     transform: perspective(1px) translateZ(0);
+     transition-duration: 0.3s;
+     transition-property: box-shadow, transform;
  }
  a:hover,
  a:active{
   color:#DACECD;
-  border: 1px solid #76533F;
-  background-color: #76533F;
+  //border: 1px solid #76533F;
+  //background-color: #76533F;
+  box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+  transform: scale(1.1);
  }
 }
 
@@ -75,6 +81,8 @@ text-align: center;
     color:#76533F;
     font-size: 1.2rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
   }
   a:hover,
   a:active{

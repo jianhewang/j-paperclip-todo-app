@@ -29,11 +29,11 @@ function form ({id, category, title, isComplete, startDate, startTime, endDate, 
                 <label for="category">Category</label>
                 <select name="category" id="category">
                     <option value="">Select Category</option>
-                    <option value="work">Work</option>
+                    <option value="expense">Expense</option>
+                    <option value="home">Home</option>
                     <option value="school">School</option>
                     <option value="social">Social</option>
-                    <option value="home">Home</option>
-                    <option value="expense">Expense</option>
+                    <option value="work">Work</option>
                 </select>
             </div>
             

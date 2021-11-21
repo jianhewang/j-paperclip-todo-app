@@ -18,12 +18,15 @@
         background-color: #fff;
         cursor: pointer;
         filter: grayscale(60%);
-        transition: filter 0.4s ease-in-out;
+        transition: all .5s ease-in-out;
     }
     button:hover,
     button:active{
-        //transform: rotate(90deg);
+        transform: translateY(-6px);
         filter: grayscale(0);
+    }
+    button:focus{
+        outline: none;
     }
  }
 
