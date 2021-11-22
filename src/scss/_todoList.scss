@@ -58,7 +58,7 @@ aside {
             p:nth-child(3){
                 color: #8C5D17;
                 font-size: .85rem;
-                span{
+                span.end-date{
                     padding-right: 5px;
                 }
                 span.date{
@@ -67,6 +67,7 @@ aside {
                 }
                 span.time{
                     color: #396fac;
+                    margin-left: 2px;
                 }
             }
             p:last-child{
